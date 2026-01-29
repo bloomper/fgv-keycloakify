@@ -82,7 +82,7 @@ const classes = {
     kcInfoAreaWrapperClass: "mt-6 text-center text-sm text-zinc-700 dark:text-zinc-300",
     kcSignUpClass: "mt-6",
 
-    // Locale dropdown (if you enable languages)
+    // Locale dropdown
     kcLocaleMainClass: "mb-0",
     kcLocaleWrapperClass: "flex justify-end",
     kcLocaleDropDownClass: "relative",

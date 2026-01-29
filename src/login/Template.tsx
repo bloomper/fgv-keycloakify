@@ -8,7 +8,7 @@ import {useInitialize} from "keycloakify/login/Template.useInitialize";
 import type {I18n} from "./i18n";
 import type {KcContext} from "./KcContext";
 import {Logo} from "./Logo.tsx";
-import {TextLogo} from "./TextLogo.tsx";
+import {LogoText} from "./LogoText.tsx";
 import {initColorScheme} from "./ColorScheme.tsx";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
@@ -64,7 +64,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
                     <div className="flex items-center justify-center gap-3 text-zinc-900 dark:text-zinc-100">
                         <Logo className="h-10 w-10 shrink-0"/>
-                        <TextLogo className="h-7 w-auto"/>
+                        <LogoText className="h-7 w-auto"/>
                     </div>
                 </div>
             </div>
