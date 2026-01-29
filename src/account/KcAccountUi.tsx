@@ -17,8 +17,6 @@ import {i18n} from "./i18n/i18n";
 import {Root} from "./root/Root";
 import {SessionExpirationWarningOverlay} from "../shared/SessionExpirationWarningOverlay";
 
-document.title = "Account Management";
-
 const prI18nInitialized = i18n.init();
 startColorSchemeManagement();
 
@@ -28,6 +26,24 @@ export default function KcAccountUi() {
     useEffect(() => {
         prI18nInitialized.then(() => setI18nInitialized());
     }, []);
+
+    useEffect(() => {
+        if (!isI18nInitialized) {
+            return;
+        }
+
+        const setTitle = () => {
+            document.title = i18n.t("accountManagementTitle", { defaultValue: "Account Management" });
+        };
+
+        setTitle();
+
+        i18n.on("languageChanged", setTitle);
+
+        return () => {
+            i18n.off("languageChanged", setTitle);
+        };
+    }, [isI18nInitialized]);
 
     if (!isI18nInitialized) {
         return null;
