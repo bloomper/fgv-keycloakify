@@ -9,6 +9,7 @@ import type {I18n} from "./i18n";
 import type {KcContext} from "./KcContext";
 import {Logo} from "./Logo.tsx";
 import {TextLogo} from "./TextLogo.tsx";
+import {initColorScheme} from "./ColorScheme.tsx";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -34,6 +35,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {realm, auth, url, message, isAppInitiatedAction} = kcContext;
 
     useEffect(() => {
+        return initColorScheme();
+    }, []);
+
+    useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName || realm.name);
     }, []);
 
@@ -57,7 +62,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         <div className={kcClsx("kcLoginClass")}>
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
                 <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
-                    <div className="flex items-center justify-center gap-3 text-zinc-100">
+                    <div className="flex items-center justify-center gap-3 text-zinc-900 dark:text-zinc-100">
                         <Logo className="h-10 w-10 shrink-0"/>
                         <TextLogo className="h-7 w-auto"/>
                     </div>
