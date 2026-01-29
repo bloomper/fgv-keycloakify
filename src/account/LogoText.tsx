@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export function TextLogo(props: React.SVGProps<SVGSVGElement>) {
+export function LogoText(props: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             viewBox="0 0 1837 570"
