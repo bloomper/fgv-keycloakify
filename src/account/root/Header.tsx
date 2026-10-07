@@ -1,5 +1,5 @@
 /**
- * This file has been claimed for ownership from @keycloakify/keycloak-account-ui version 260502.0.2.
+ * This file has been claimed for ownership from @keycloakify/keycloak-account-ui version 260700.0.3.
  * To relinquish ownership and restore this file to its original content, run the following command:
  *
  * $ npx keycloakify own --path "account/root/Header.tsx" --revert
@@ -18,11 +18,12 @@ import {ExternalLinkSquareAltIcon} from "../../shared/@patternfly/react-icons";
 import {useTranslation} from "react-i18next";
 import {useHref} from "react-router-dom";
 
-import {environment} from "../environment";
+import {AccountEnvironment} from "..";
 
 import style from "./header.module.css";
 
 const ReferrerLink = () => {
+    const {environment} = useEnvironment<AccountEnvironment>();
     const {t} = useTranslation();
 
     return environment.referrerUrl ? (
